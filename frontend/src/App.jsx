@@ -1,8 +1,22 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 function App() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  async function handleSubmit() {
+    console.log('Sending:', { email, password })
+    try {
+      const response = await axios.post('http://localhost:8000/api/users/register/', {
+      email, 
+      password,
+    })
+    console.log('Success:', response.data)
+  } catch (error) {
+      console.error('Error:', error)
+    }
+  }
 
   return (
     <div>
@@ -18,7 +32,7 @@ function App() {
         value={password}
         onChange={e => setPassword(e.target.value)}
       />
-      <button type="button">Submit</button>
+      <button type="button" onClick={handleSubmit}>Submit</button>
     </div>
   )
 }
