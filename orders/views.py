@@ -3,7 +3,6 @@ from django.contrib.auth.decorators import login_required
 from cart.models import Cart 
 from .models import Order, OrderItem
 from django.http import HttpResponse
-# Create your views here.
 
 @login_required
 def checkout(request):

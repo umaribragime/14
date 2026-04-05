@@ -3,7 +3,6 @@ from rest_framework import viewsets
 from .seralizers import ProductSerializer, CategorySerializer
 from .models import Product, Category
 
-# Create your views here.
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all()
