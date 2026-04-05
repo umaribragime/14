@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .seralizers import ProductSerializer, CategorySerializer
+from .serializers import ProductSerializer, CategorySerializer
 from .models import Product, Category
 
 
