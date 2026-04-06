@@ -8,7 +8,7 @@ function App() {
   async function handleSubmit() {
     console.log('Sending:', { email, password })
     try {
-      const response = await axios.post('http://localhost:8000/api/users/register/', {
+      const response = await axios.post('http://localhost:8000/users/register/', {
       email, 
       password,
     })
